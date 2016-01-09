@@ -1,0 +1,165 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.caution {
+    display: inline;
+
+    img{
+    width: 50px;
+    height: auto;
+    }
+}
+
+
+// animations -----------------------------------------------------------------------
+@keyframes bounceInLeft {
+    from, 60%, 75%, 90%, to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-3000px, 0, 0);
+        transform: translate3d(-3000px, 0, 0);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(25px, 0, 0);
+        transform: translate3d(25px, 0, 0);
+    }
+
+    75% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    90% {
+        -webkit-transform: translate3d(5px, 0, 0);
+        transform: translate3d(5px, 0, 0);
+    }
+
+    to {
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+// bounce out to the right
+@keyframes bounceOutRight {
+    20% {
+        opacity: 1;
+        -webkit-transform: translate3d(-20px, 0, 0);
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(2000px, 0, 0);
+        transform: translate3d(2000px, 0, 0);
+    }
+}
+
+// assigning animations per page ----------------------------------------------------
+.ng-enter   { animation: bounceInLeft 2s both ease-in; z-index: 5; }
+.ng-leave   { animation: bounceOutRight both 2s ease-in; z-index: 6; }
+
+// home
+.page-home .start.ng-enter     { animation: scaleUp 0.5s both ease-in; }
+
+// general page styling ------------------------------------------------------------
+.page {
+    margin: 0;
+    bottom: 0; 
+    padding-top: 200px;
+    position: absolute; 
+    text-align: center;
+    top: 6%;  
+    width: 100%; 
+}
+
+body {
+    padding: 0;
+}
+
+.header,
+.footer {
+    display: inline;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+
+    /* Make the masthead heading the same height as the navigation */
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+    }
+}
+
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 0px 0;
+}
+
+// specific page stying -------------------------------------------------------------
+// home page
+.page-home      { background: blue; color: whitesmoke; }
+
+
+.circle {
+    float: left;
+    -webkit-clip-path: circle(25% at 55.1% 28%);
+    clip-path: circle(25% at 55.1% 28%);
+    overflow: hidden;
+}
+
+// resume page
+.page-about     { background: green; color: whitesmoke; }
+
+// projects page
+.page-contact   { background: red; color: whitesmoke; }
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+}
+
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
